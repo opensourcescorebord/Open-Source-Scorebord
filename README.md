@@ -72,10 +72,10 @@ This is version 1.0
 ## Authors
 
 * **Sena Gomashie** - *All round* - [Linkedin](https://www.linkedin.com/in/sena-gomashie-14079a155/)
-* **Gerardus Dulfer** - *Front-end* - [PurpleBooth](https://github.com/PurpleBooth)
-* **Frederik de Boer** - *Front-end* - [PurpleBooth](https://github.com/PurpleBooth)
-* **Jelle Pek** - *Back-end* - [PurpleBooth](https://github.com/PurpleBooth)
-* **Emiel de Vries** - *Back-end* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Gerardus Dulfer** - *Front-end* - [Linkedin]()
+* **Frederik de Boer** - *Front-end* - [Linkedin]()
+* **Jelle Pek** - *Back-end* - [Linkedin]()
+* **Emiel de Vries** - *Back-end* - [Linkedin](https://www.linkedin.com/in/emiel-de-vries-a519a6147)
 
 ## Acknowledgments
 
