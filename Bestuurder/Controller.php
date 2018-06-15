@@ -183,31 +183,11 @@ header( 'Content-Type: text/html; charset=utf-8' );
 
     $.get("../PHP/Timer.php", function(data){
       console.log(data);
-      Xtra = JSON.stringify(data.gT.Timeout_Time);
-      distance = JSON.stringify(data.gT.cur_time);
-      Period = JSON.stringify(data.gT.Perdiod);
-      var dis = Number(distance);
-      if (TryParseInt(dis) == true)
-{
-      dis = 100;
-}
-
-      console.log(Xtra);
-      console.log(dis);
-      console.log(Period);
+      Xtra = Number(data.gT.Timeout_Time);
+      distance = Number(data.gT.cur_time);
+      Period = Number(data.gT.Perdiod);
     }, "json");
 
-    function TryParseInt(str,defaultValue) {
-         var retValue = defaultValue;
-         if(str !== null) {
-             if(str.length > 0) {
-                 if (!isNaN(str)) {
-                     retValue = parseInt(str);
-                 }
-             }
-         }
-         return retValue;
-    }
 
     $("#logout").click( function(){
       var logout = confirm("Weet je zeker dat je wil uitloggen en daarmee ook de game wilt beeindigen?");

@@ -1,0 +1,11 @@
+Front-End:
+PiWaitingroom
+GameSettings
+StartGame
+Full screen Toescouwers
+Score in het midden
+
+
+Back-End:
+Teamlogos
+Update teams Toeschouwers

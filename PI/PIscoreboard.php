@@ -165,19 +165,18 @@ $('#advert').innerfade({
 });
 
 var TmO = 0;
-<?php
-include '../PHP/ConDB.php';
-$result = $dbC->query("SELECT Timeout_Time, Perdiod ,CASE WHEN Perdiod = 1 THEN TIME_TO_SEC(timediff(now(), start_time)) WHEN Perdiod = 2 THEN TIME_TO_SEC(timediff(now(), Intermediate_Time)) + 45*60 End as cur_time
-FROM games WHERE Game_ID='$_SESSION[code]'");
+var Xtra = 0;
+var distance = 0;
+var Period = 0;
 
-if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) { ?>
-    var Xtra = <?php echo $row['Timeout_Time']; ?>;
-    var distance = <?php echo $row['cur_time']; ?>;
-    var period = <?php echo $row['Perdiod']; ?>;
-    <?php}}   ?>
+$.get("../PHP/Timer.php", function(data){
+  console.log(data);
+  Xtra = Number(data.gT.Timeout_Time);
+  distance = Number(data.gT.cur_time);
+  Period = Number(data.gT.Perdiod);
+}, "json");
 
-    $(".period").text("period");
+    $(".period").text(Period);
 
     var Timeout = 0;
     var myVar = setInterval(myTimer, 1000);
@@ -293,7 +292,5 @@ if ($result->num_rows > 0) {
       setTimeout(getScore, 1000);
     }());
     </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   </body>
   </html>
