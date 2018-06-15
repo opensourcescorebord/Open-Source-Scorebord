@@ -155,6 +155,10 @@ var Add = 0;
 var Ext = 0;
 var periodtime = 45;
 var endtime = 90;
+var TmO = 0;
+var Xtra = 0;
+var distance = 0;
+var Period = 0;
 
 $('#advert').innerfade({
   animationtype: 'slide',
@@ -163,11 +167,6 @@ $('#advert').innerfade({
   type: 'sequence',
   containerheight: 'auto'
 });
-
-var TmO = 0;
-var Xtra = 0;
-var distance = 0;
-var Period = 0;
 
 $.get("../PHP/Timer.php", function(data){
   Xtra = Number(data.gT.Timeout_Time);
@@ -183,9 +182,8 @@ $.get("../PHP/Timer.php", function(data){
     distance = distance - Xtra;
     (function Timeout() {
       $.get("../PHP/getTimeout.php?Game_ID=<?php echo $_SESSION['Game_ID'] ?>", function(data){
-
-        TmO = Number(data.gT.Timeout);  // <-----------  access the element
-        console.log(TmO)l
+        TmO = JSON.stringify(data.Timeout);  // <-----------  access the element
+        console.log(TmO);
         if (TmO == 1 && timer == 1) {
           Timeout = Timeout + 1;
           clearInterval(myVar);
@@ -260,6 +258,7 @@ $.get("../PHP/Timer.php", function(data){
             $('.S2').text(data.Sc.Score_2);
             Add = (parseInt(data.Sc.Extended_Time));
             Ext = (parseInt(data.Sc.Extended));
+            Timeout =(parseInt(data.Sc.Timeout));
 
             if (Ext == 1 && endtime == 90) {
               endtime = endtime + Add;
