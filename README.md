@@ -1,6 +1,6 @@
-# Project Title
+# Open-Source Scorebord
+Een moderne variant op een oud idee.
 
-One Paragraph of project description goes here
 
 ## Getting Started
 
@@ -64,9 +64,6 @@ Add additional notes about how to deploy this on a live system
 * [HTML](https://www.w3schools.com/Html/) - Front-end mark up
 * [CSS](https://www.w3schools.com/CSS/) - Front-end styling
 
-## Contributing
-
-<!-- Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. -->
 
 ## Versioning
 
@@ -75,20 +72,12 @@ This is version 1.0
 ## Authors
 
 * **Sena Gomashie** - *All round* - [PurpleBooth](https://github.com/PurpleBooth)
-**Gerardus Dulfer** - *Front-end* - [PurpleBooth](https://github.com/PurpleBooth)
-**Frederik de Boer** - *Front-end* - [PurpleBooth](https://github.com/PurpleBooth)
-**Jelle Pek** - *Back-end* - [PurpleBooth](https://github.com/PurpleBooth)
-**Emiel de Vries** - *Back-end* - [PurpleBooth](https://github.com/PurpleBooth)
-
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **Gerardus Dulfer** - *Front-end* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Frederik de Boer** - *Front-end* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Jelle Pek** - *Back-end* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Emiel de Vries** - *Back-end* - [PurpleBooth](https://github.com/PurpleBooth)
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Dank aan SDI voor het ondersteunen en geven van deze opdracht.
+* Dank aan dhr. Peter Kamphuis voor het ondersteunen van ons project.
