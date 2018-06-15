@@ -71,7 +71,7 @@ This is version 1.0
 
 ## Authors
 
-* **Sena Gomashie** - *All round* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Sena Gomashie** - *All round* - [Linkedin](https://www.linkedin.com/in/sena-gomashie-14079a155/)
 * **Gerardus Dulfer** - *Front-end* - [PurpleBooth](https://github.com/PurpleBooth)
 * **Frederik de Boer** - *Front-end* - [PurpleBooth](https://github.com/PurpleBooth)
 * **Jelle Pek** - *Back-end* - [PurpleBooth](https://github.com/PurpleBooth)
