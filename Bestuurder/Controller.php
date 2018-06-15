@@ -86,7 +86,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
                 <p class= "text-center font-weight-bold text-dark time"> --:-- </p>
 
                 <p class="text-center font-weight-bold text-dark p-0 m-0"> Period </p>
-                <p class= "text-center font-weight-bold text-dark period"> - </p>
+                <p class= "text-center font-weight-bold text-dark Period"> - </p>
               </div>
 
               <!-- Logo Team 2 -->
@@ -189,7 +189,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
 
     }, "json");
 
-    console.log(Period);
+
     $("#logout").click( function(){
       var logout = confirm("Weet je zeker dat je wil uitloggen en daarmee ook de game wilt beeindigen?");
 
@@ -199,6 +199,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
     });
 
     var endtime = 90;
+    $(".Period").html(Period);
     $("#Add").click( function()  {
       var Add = $("#Verleng").val();
       endtime = endtime + parseInt(Add);

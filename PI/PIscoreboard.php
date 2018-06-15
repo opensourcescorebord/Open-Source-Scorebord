@@ -105,7 +105,7 @@ h3 {
                   </h2>
 
                   <h2 class="text-center font-weight-bold text-dark p-0 m-0"> Period </h2>
-                  <h2 class= "text-center font-weight-bold text-dark period"> - </h2>
+                  <h2 class= "text-center font-weight-bold text-dark Period"> - </h2>
     </div>
   </div>
   <div class="col-4">
@@ -174,40 +174,17 @@ $.get("../PHP/Timer.php", function(data){
   Period = Number(data.gT.Perdiod);
 }, "json");
 
-    $(".period").text(Period);
+
 
     var Timeout = 0;
     var myVar = setInterval(myTimer, 1000);
     var timer = 1;
     distance = distance - Xtra;
-    (function Timeout() {
-      $.get("../PHP/getTimeout.php?Game_ID=<?php echo $_SESSION['Game_ID'] ?>", function(data){
-        TmO = JSON.stringify(data.Timeout);  // <-----------  access the element
-        console.log(TmO);
-        if (TmO == 1 && timer == 1) {
-          Timeout = Timeout + 1;
-          clearInterval(myVar);
-          timer = 0;
-        } else if (TmO == 0 && timer == 0) {
-          setInterval(myTimer, 1000);
-          timer = 1;
-          $.post("../PHP/saveTime.php?Time=" + Timeout);
-        } else if (TmO == 2)  {
-          session_destroy();
-          window.location.replace('PIwaitingroom.php');
-
-        }
-
-
-
-      });
-
-      setTimeout(Timeout, 1000);
-    }());
 
 
 
     function myTimer() {
+      $(".Period").html(Period);
       // Time calculations for days, hours, minutes and seconds
       var minutes = Math.floor(distance / 60);
       var seconds = distance - minutes * 60;
@@ -218,13 +195,13 @@ $.get("../PHP/Timer.php", function(data){
       //  document.getElementById("demo").innerHTML = minutes;
 
       //If the count down is over, write some text
-      if (minutes >= 45 && period == 1) {
+      if (minutes >= 45 && Period == 1) {
 
         clearInterval(myTimer);
         $(".time").text("TimeOut");
         window.location.replace('PiAdverts.php');
       }
-      if (minutes >= endtime && period == 2){
+      if (minutes >= endtime && Period == 2){
         clearInterval(myTimer);
         $(".time").text("Game Over!");
         window.location.replace('PIwaitingroom.php');
@@ -258,7 +235,7 @@ $.get("../PHP/Timer.php", function(data){
             $('.S2').text(data.Sc.Score_2);
             Add = (parseInt(data.Sc.Extended_Time));
             Ext = (parseInt(data.Sc.Extended));
-            Timeout =(parseInt(data.Sc.Timeout));
+            TmO =(parseInt(data.Sc.Timeout));
 
             if (Ext == 1 && endtime == 90) {
               endtime = endtime + Add;
@@ -272,6 +249,19 @@ $.get("../PHP/Timer.php", function(data){
 
                 }
             }
+            if (TmO == 1 && timer == 1) {
+              Timeout = Timeout + 1;
+              clearInterval(myVar);
+              timer = 0;
+            } else if (TmO == 0 && timer == 0) {
+              setInterval(myTimer, 1000);
+              timer = 1;
+              $.post("../PHP/saveTime.php?Time=" + Timeout);
+            } else if (TmO == 2)  {            
+              window.location.replace('PIwaitingroom.php');
+
+            }
+
 
 
           }

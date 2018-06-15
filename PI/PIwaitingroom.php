@@ -1,6 +1,13 @@
 <?php
     include '../PHP/ConDB.php';
+    if (session_status() == PHP_SESSION_NONE) {
     session_start();
+} else {
+  session_destroy();
+  session_start();
+}
+
+
  ?>
  <html lang="en">
    <head>
