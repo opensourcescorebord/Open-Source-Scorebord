@@ -186,9 +186,10 @@ header( 'Content-Type: text/html; charset=utf-8' );
       Xtra = Number(data.gT.Timeout_Time);
       distance = Number(data.gT.cur_time);
       Period = Number(data.gT.Perdiod);
+
     }, "json");
 
-
+    console.log(Period);
     $("#logout").click( function(){
       var logout = confirm("Weet je zeker dat je wil uitloggen en daarmee ook de game wilt beeindigen?");
 

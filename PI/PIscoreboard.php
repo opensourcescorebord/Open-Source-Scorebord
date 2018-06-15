@@ -170,7 +170,6 @@ var distance = 0;
 var Period = 0;
 
 $.get("../PHP/Timer.php", function(data){
-  console.log(data);
   Xtra = Number(data.gT.Timeout_Time);
   distance = Number(data.gT.cur_time);
   Period = Number(data.gT.Perdiod);
@@ -184,8 +183,9 @@ $.get("../PHP/Timer.php", function(data){
     distance = distance - Xtra;
     (function Timeout() {
       $.get("../PHP/getTimeout.php?Game_ID=<?php echo $_SESSION['Game_ID'] ?>", function(data){
-        var mydata= $.parseJSON(data);
-        TmO = mydata.Timeout;  // <-----------  access the element
+
+        TmO = Number(data.gT.Timeout);  // <-----------  access the element
+        console.log(TmO)l
         if (TmO == 1 && timer == 1) {
           Timeout = Timeout + 1;
           clearInterval(myVar);
@@ -194,12 +194,11 @@ $.get("../PHP/Timer.php", function(data){
           setInterval(myTimer, 1000);
           timer = 1;
           $.post("../PHP/saveTime.php?Time=" + Timeout);
+        } else if (TmO == 2)  {
+          session_destroy();
+          window.location.replace('PIwaitingroom.php');
+
         }
-        // } else if (TmO == 2)  {
-        //   session_destroy();
-        //   window.location.replace('PIwaitingroom.php');
-        //
-        // }
 
 
 
