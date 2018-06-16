@@ -24,13 +24,6 @@ var Xtra = 0;
 var distance = 0;
 var Period = 0;
 
-$('#advert').innerfade({
-  animationtype: 'slide',
-  speed: 'normal',
-  timeout: '15000',
-  type: 'sequence',
-  containerheight: 'auto'
-});
 
 $.get("../PHP/Timer.php", function(data){
   console.log(data);
@@ -103,7 +96,7 @@ $.get("../PHP/Timer.php", function(data){
     $.get("../PHP/getTeams.php", function(data){
       console.log(data);
       $('.T1').text(data.Team.Team_1);
-      $('.T2').text(data.Team.Team_1);
+      $('.T2').text(data.Team.Team_2);
 
 
     }, "json");

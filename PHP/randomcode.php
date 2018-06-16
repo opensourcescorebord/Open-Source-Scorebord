@@ -7,7 +7,7 @@
 
     $randomPassword = createRandomPassword();
 
-		$result = $dbC->query("SELECT * FROM games WHERE User = '0';");
+		$result = $dbC->query("SELECT * FROM games WHERE User = '0' AND End_Time IS NULL;");
 	          if ($result->num_rows > 0) {
               $request = $dbC->query("SELECT * FROM games WHERE End_Time IS NULL;");
               if ($request->num_rows > 0){
@@ -16,7 +16,7 @@
                 header("location:../Index.php");
               }
 
-						} else {
+						}  else {
 							$sql="INSERT games SET Game_ID = '$randomPassword';";
 						}
 
