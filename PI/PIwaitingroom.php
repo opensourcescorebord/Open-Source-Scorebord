@@ -1,14 +1,9 @@
 <?php
     include '../PHP/ConDB.php';
-    if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-} else {
-  session_destroy();
-  session_start();
-}
-
-
- ?>
+    if (isset($_COOKIE['code'])) {
+    setcookie('code', "", 1, "/PHP");
+} 
+?>
  <html lang="en">
    <head>
      <meta charset="utf-8">
