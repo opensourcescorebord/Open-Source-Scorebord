@@ -8,7 +8,7 @@
 <body>
  
 
-<h2 class="text-center font-weight-bold text-black-50 p-0 m-0">Open Source Scorebord</h2>
+<h2 class="text-center font-weight-bold text-black-50 p-0 m-0">07Open Source Scorebord</h2>
 
 <br>
 

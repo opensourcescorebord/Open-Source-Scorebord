@@ -155,6 +155,10 @@ var Add = 0;
 var Ext = 0;
 var periodtime = 45;
 var endtime = 90;
+var TmO = 0;
+var Xtra = 0;
+var distance = 0;
+var Period = 0;
 
 $('#advert').innerfade({
   animationtype: 'slide',
@@ -164,11 +168,6 @@ $('#advert').innerfade({
   containerheight: 'auto'
 });
 
-var TmO = 0;
-var Xtra = 0;
-var distance = 0;
-var Period = 0;
-
 $.get("../PHP/Timer.php", function(data){
   console.log(data);
   Xtra = Number(data.gT.Timeout_Time);
@@ -176,12 +175,13 @@ $.get("../PHP/Timer.php", function(data){
   Period = Number(data.gT.Perdiod);
 }, "json");
 
-    $(".period").text(Period);
+
 
     var Timeout = 0;
     var myVar = setInterval(myTimer, 1000);
     var timer = 1;
     distance = distance - Xtra;
+<<<<<<< HEAD
     (function Timeout() {
       $.get("../PHP/getTimeout.php?Game_ID=<?php echo $_SESSION['Game_ID'] ?>", function(result){
         console.log(result);
@@ -207,10 +207,13 @@ $.get("../PHP/Timer.php", function(data){
 
       setTimeout(Timeout, 1000);
     }());
+=======
+>>>>>>> 694a364129b038e5eab3a93574607d1f8b700730
 
 
 
     function myTimer() {
+      $(".Period").html(Period);
       // Time calculations for days, hours, minutes and seconds
       var minutes = Math.floor(distance / 60);
       var seconds = distance - minutes * 60;
@@ -261,6 +264,7 @@ $.get("../PHP/Timer.php", function(data){
             $('.S2').text(data.Sc.Score_2);
             Add = (parseInt(data.Sc.Extended_Time));
             Ext = (parseInt(data.Sc.Extended));
+            TmO =(parseInt(data.Sc.Timeout));
 
             if (Ext == 1 && endtime == 90) {
               endtime = endtime + Add;
@@ -274,6 +278,19 @@ $.get("../PHP/Timer.php", function(data){
 
                 }
             }
+            if (TmO == 1 && timer == 1) {
+              Timeout = Timeout + 1;
+              clearInterval(myVar);
+              timer = 0;
+            } else if (TmO == 0 && timer == 0) {
+              setInterval(myTimer, 1000);
+              timer = 1;
+              $.post("../PHP/saveTime.php?Time=" + Timeout);
+            } else if (TmO == 2)  {            
+              window.location.replace('PIwaitingroom.php');
+
+            }
+
 
 
           }
