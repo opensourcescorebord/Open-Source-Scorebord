@@ -181,7 +181,7 @@ $.get("../PHP/Timer.php", function(data){
     var myVar = setInterval(myTimer, 1000);
     var timer = 1;
     distance = distance - Xtra;
-<<<<<<< HEAD
+
     (function Timeout() {
       $.get("../PHP/getTimeout.php?Game_ID=<?php echo $_SESSION['Game_ID'] ?>", function(result){
         console.log(result);
@@ -207,8 +207,7 @@ $.get("../PHP/Timer.php", function(data){
 
       setTimeout(Timeout, 1000);
     }());
-=======
->>>>>>> 694a364129b038e5eab3a93574607d1f8b700730
+
 
 
 
@@ -286,7 +285,7 @@ $.get("../PHP/Timer.php", function(data){
               setInterval(myTimer, 1000);
               timer = 1;
               $.post("../PHP/saveTime.php?Time=" + Timeout);
-            } else if (TmO == 2)  {            
+            } else if (TmO == 2)  {
               window.location.replace('PIwaitingroom.php');
 
             }
