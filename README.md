@@ -74,7 +74,7 @@ This is version 1.0
 * **Sena Gomashie** - *All round* - [Linkedin](https://www.linkedin.com/in/sena-gomashie-14079a155/)
 * **Gerardus Dulfer** - *Front-end* - [Linkedin]()
 * **Frederik de Boer** - *Front-end* - [Linkedin](https://www.linkedin.com/in/frederik-boer-68688b158/)
-* **Jelle Pek** - *Back-end* - [Linkedin]()
+* **Jelle Pek** - *Back-end* - [Linkedin](https://www.linkedin.com/in/jellepek/)
 * **Emiel de Vries** - *Back-end* - [Linkedin](https://www.linkedin.com/in/emiel-de-vries-a519a6147/)
 
 ## Acknowledgments
