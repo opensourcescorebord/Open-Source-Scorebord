@@ -3,11 +3,11 @@ session_start();
 include '../PHP/conDB.php';
 $logos = scandir("../images/", 1);
 
-if(!isset($_SESSION['code'])){
+if(!isset($_COOKIE['code'])){
   if(!isset($_GET['Game_ID'])){
     header("location:/PI/PIwaitingroom.php");
   }
-  $_SESSION['code'] = $_GET['Game_ID'];
+  setcookie('code',  $_GET['Game_ID'], time() + (86400 * 30), '/');
 }
 ?>
 
@@ -151,6 +151,23 @@ h3 {
 
 
 <script>
+function retrieve_cookie(name) {
+  var cookie_value = "",
+    current_cookie = "",
+    name_expr = name + "=",
+    all_cookies = document.cookie.split(';'),
+    n = all_cookies.length;
+
+  for(var i = 0; i < n; i++) {
+    current_cookie = all_cookies[i].trim();
+    if(current_cookie.indexOf(name_expr) == 0) {
+      cookie_value = current_cookie.substring(name_expr.length, current_cookie.length);
+      break;
+    }
+  }
+  return cookie_value;
+}
+
 var Add = 0;
 var Ext = 0;
 var periodtime = 45;
@@ -183,7 +200,7 @@ $.get("../PHP/Timer.php", function(data){
     distance = distance - Xtra;
 
     (function Timeout() {
-      $.get("../PHP/getTimeout.php?Game_ID=<?php echo $_SESSION['Game_ID'] ?>", function(result){
+      $.get("../PHP/getTimeout.php?Game_ID=" + retrieve_cookie('code'), function(result){
         console.log(result);
         $(TmO).val(result.Tout);
         console.log(TmO);
@@ -236,26 +253,22 @@ $.get("../PHP/Timer.php", function(data){
       }
     }
 
+    $.get("../PHP/getTeams.php", function(data){
+      console.log(data);
+      $('.T1').text(data.Team.Team_1);
+      $('.T2').text(data.Team.Team_1);
 
-    var getTeams = function () {
-      <?php
-      $result = $dbC->query("SELECT Team_1, Team_2 FROM games WHERE Game_ID='$_SESSION[code]'");
-      if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) { ?>
-          var Team_1 = "<?php echo $row['Team_1'] ?>";
-          var Team_2 = "<?php echo $row['Team_2'] ?>";
-          $(".T1").text(Team_1);
-          $(".T2").text(Team_2);
-          <?php }?>
-          <?php }?>
-        };
-        getTeams();
+
+    }, "json");
+
+
+
         var Score_1;
         var Score_2;
 
         (function getScore() {
           $.ajax({ type: "POST",
-          url: "../PHP/Scoreload.php?Game_ID=<?php echo $_SESSION['code']; ?>",
+          url: "../PHP/Scoreload.php?Game_ID=" + retrieve_cookie('code'),
           dataType: "json",
           success : function(data)
           {
@@ -296,7 +309,7 @@ $.get("../PHP/Timer.php", function(data){
         });
 
         $.ajax({ type: "POST",
-        url: "../PHP/getTimeout.php?Game_ID=<?php echo $_SESSION['code'] ?>",
+        url: "../PHP/getTimeout.php?Game_ID=" + retrieve_cookie('code'),
         dataType: "json",
         succes : function(data)
         {
