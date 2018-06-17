@@ -23,7 +23,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
   <!-- Bootstrap & JQuery-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="../JS/controls.js"></script>
-    <script src="../JS/Bestuurscript.js"></script>
+
     <link rel="stylesheet" type="text/css" href="../CSS/slider.css">
     <!--Page specific CSS-->
     <style media="screen">
@@ -168,14 +168,9 @@ header( 'Content-Type: text/html; charset=utf-8' );
         </div>
       </div>
     </div>
-<script type="text/javascript">
-//click functions
-//logout button
-
-//end
-</script>
 
 
+    <script src="../JS/Bestuurscript.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
