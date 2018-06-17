@@ -24,7 +24,7 @@ if(!isset($_COOKIE['code'])){
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <link href="../CSS/jquery.eatoast.css" rel="stylesheet">
   <script src="../JS/jquery.eatoast.js"></script>
-  <script src="../JS/Scorescript.js"></script>
+
 
 
 
@@ -129,5 +129,6 @@ $('#advert').innerfade({
 
 
 </script>
+  <script src="../JS/Scorescript.js"></script>
   </body>
   </html>
