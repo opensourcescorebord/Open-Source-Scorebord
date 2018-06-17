@@ -28,17 +28,28 @@ if(isset($Team_1, $Team_2, $Sport)) {
 
       $fileExt2 = explode('.', $fileName);
       $fileActualExt2 = strtolower(end($fileExt));
-	if ($fileSize >= 0 And $fileSize2 >= 0){
+
       $allowed = array('jpg', 'jpeg', 'png');
       if (in_array($fileActualExt, $allowed) And in_array($fileActualExt2, $allowed)){
         if ($fileError === 0 And $fileError2 === 0){
           if($fileSize <= 1000000 And $fileSize2 <= 1000000)  {
+            if ($fileSize >= 0){
             $fileNameNew = $_SESSION['code']."1".".".$fileActualExt;
-            $fileNameNew2 = $_SESSION['code']."2".".".$fileActualExt2;
             $fileDestination = '../images/'.$fileNameNew;
+              move_uploaded_file($fileTmpName, $fileDestination);
+
+          }
+          if ($fileSize >= 0){
+            $fileNameNew2 = $_SESSION['code']."2".".".$fileActualExt2;
+
             $fileDestination2 = '../images/'.$fileNameNew2;
-            move_uploaded_file($fileTmpName, $fileDestination);
+
             move_uploaded_file($fileTmpName2, $fileDestination2);
+          }
+          if ($fileSize == 0 && $fileSize2 == 0)
+          {
+            array_map('unlink', glob('../images/*'));
+          }
 
           } else {
             echo "Your file is too big!";
@@ -50,9 +61,7 @@ if(isset($Team_1, $Team_2, $Sport)) {
       } else {
         echo "Cant upload files of this type";
       }
-}else {
-array_map('unlink', glob('../images/*'));
-}
+
 
     // To protect MySQL injection (more detail about MySQL injection)
     $thisTeam_1 = stripslashes($Team_1);
