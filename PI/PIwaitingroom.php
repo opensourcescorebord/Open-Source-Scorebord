@@ -29,10 +29,8 @@
    </head>
 <body>
   <div>
-    <br>
-    <br>
     <div class="row h-100 justify-content-center">
-      <div class="col-8 w-50 h-25 py-5 card shadow-lg align-self-center">
+      <div class="col-8 w-50 h-50 py-5 card shadow-lg align-self-center">
         <h1 class="text-center">Welkom!</h1>
         <h2 class="text-center">Een wedstrijd zal binnenkort beginnen.</h2>
          <h3 class="text-center"><span id="T1">-</span><span> vs </span><span id="T2">-</span></h3>
