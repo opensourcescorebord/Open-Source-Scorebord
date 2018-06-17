@@ -5,9 +5,13 @@ if(!isset($_SESSION['code'])) {
 }
 else //Continue to current page
 ?>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+</head>
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
 
 
@@ -18,17 +22,13 @@ else //Continue to current page
 	<title>OSS</title>
 </head>
 <body>
-<br>
 
 
 
-
- <div class="container">
-  <div class="row">
-    <div class="col-sm">
-    </div>
-    <div class="col-sm">
-
+ <div class="container ">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-4">
+<p class="display-4 text-center text-bold">Spel instellingen</p>
 
 
 
@@ -68,7 +68,7 @@ else //Continue to current page
               </div>
               <div class="form-group">
                 <!---Stuur form--->
-                <button class="btn btn-lg btn-info"type="submit" name="button"> Create </button>
+                <button class="btn btn-lg btn-info "type="submit" name="button"> Create </button>
                   <br>
                   <br>
                 <a class="btn btn-lg btn-info" href="/PHP/logout.php">LOGOUT</a>
@@ -80,8 +80,6 @@ else //Continue to current page
           </Form>
 
 
-    </div>
-    <div class="col-sm">
     </div>
 
 </div>

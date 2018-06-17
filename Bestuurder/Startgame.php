@@ -1,7 +1,6 @@
 <?php
 include '../PHP/ConDB.php';
-session_start(
-); //Start the session
+session_start(); //Start the session
 if(!isset($_SESSION['code'])) {//If session not registere
 header("location:../Index.php"); // Redirect to login.php page
 }
@@ -27,22 +26,23 @@ $logos = scandir("../images/", 1);
  </style>
  </head>
 <body>
-  <div class="row">
-    <div class="col-6">
-      <img class="card-img-top" src="../images/<?php echo $logos[0]?>" alt=" ">
-      <h1 id="T1" class="text-center">--</h1>
+  <div class="container">
+    <div class="row h-75 justify-content-md-center">
+      <div class="col">
+        <img class="card-img-top" src="../images/<?php echo $logos[0]?>" alt=" ">
+        <h1 id="T1" class="text-center">--</h1>
+      </div>
+      <div class="col">
+        <img class="card-img-top" src="../images/<?php echo $logos[1]?>" alt=" ">
+        <h1 id="T2" class="text-center">--</h1>
+      </div>
     </div>
-    <div class="col-6">
-      <img class="card-img-top" src="../images/<?php echo $logos[1]?>" alt=" ">
-      <h1 id="T2" class="text-center">--</h1>
-    </div>
+    <div class="row pt-5 justify-content-center">
+      <div class="col-4">
+        <a href="SetTime.php" class="btn btn-lg btn-primary btn-block btn-info text-center" role="button">Start Game!</a>
+      </div>
   </div>
-  <div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-4 align-self-center">
-      <a href="SetTime.php" class="btn btn-lg btn-primary btn-block btn-info" role="button">Start Game!</a>
-    </div>
+
 
   <script type="text/javascript">
   (function getTeams() {
