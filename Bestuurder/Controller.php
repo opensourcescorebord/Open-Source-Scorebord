@@ -171,53 +171,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
 <script type="text/javascript">
 //click functions
 //logout button
-$("#logout").click( function(){
-      var logout = confirm("Weet je zeker dat je wil uitloggen en daarmee ook de game wilt beeindigen?");
 
-      if(logout){
-        location.href = "../PHP/midgameLeave.php";
-      }
-    });
-//Verlenging
-$("#Add").click( function()  {
-      var Add = $("#Verleng").val();
-      endtime = endtime + parseInt(Add);
-      //console.log(endtime);
-      $.post("../PHP/Verlengen.php", {tijd: parseInt(Add), set: "1"}, "json");
-      $("#Add").prop("disabled",true);
-      $('#Verlening').modal('hide');
-      alert(Add + " Minuten worden aan het eind toegevoegd.");
-    })
-//Timeout
-  $( "#Pause" ).on('click', function() {
-          setInterval(Timeout_Time, 1000);
-          $.post("../PHP/setTimeout.php", function(data) {
-clearInterval(myVar);
-        $("#Pause").unbind("click");
-        $( ".o" ).html("<button id='unPause' class='shadow btn btn-danger btn-lg w-100'> Hervatten </button>" );
-        $("#unPause").click( function() {
-          clearInterval(Timeout_Time());
-          $.post("../PHP/saveTime.php?Time=" + Timeout);
-          Timeout = 0;
-          $.ajax({ type: "POST",
-          url: "../PHP/unsetTimeout.php",
-          success : function(data)
-          {
-            $("#unPause").unbind("click");
-            $( ".o" ).html("<button id='Pause' class='shadow btn btn-danger btn-lg w-100'> Pauzeren </button>" );
-            $("#Pause").click(Timeoutbutton);
-            myVar = setInterval(myTimer, 1000);
-
-          }
-        });
-      });
-
-          });
-        })
-
-  function Timeout_Time(){
-          Timeout = Timeout + 1;
-      }
 //end
 </script>
 

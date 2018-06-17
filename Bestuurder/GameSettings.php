@@ -62,14 +62,14 @@ else //Continue to current page
               </div>
             </div>
           </Form>
-<<<<<<< HEAD
-    </div>
-=======
-
 
     </div>
 
->>>>>>> c78819bae351d342eb72a00ccbb7f7a80775f6a4
+
+
+    </div>
+
+
 </div>
 </div>
 <div class="text-center font-weight-bold"></div>
