@@ -73,7 +73,7 @@ h3 {
         <div class="col-2">
 
           <div class="shadow-lg card">
-            <img class="card-img-top" src="../images/<?php echo $logos[1]?>" alt="../Stock/Thuis.png">
+<img class="card-img-top" src="../images/<?php echo $logos[1]?>" onError="this.onerror=null;this.src='/Stock/Thuis.png'" >
             <div class="card-body">
               <h3 class="text-center T1">---</h3>
             </div>
@@ -108,7 +108,7 @@ h3 {
           <div class="col-2">
             <div class="shadow-lg card">
 
-              <img class="card-img-top" src="../images/<?php echo $logos[0] ?>" alt="../Stock/Uit.png">
+<img class="card-img-top" src="../images/<?php echo $logos[1]?>" onError="this.onerror=null;this.src='/Stock/Uit.png'" >
               <div class="card-body">
                 <h3 class="text-center T2">--- </h3>
               </div>

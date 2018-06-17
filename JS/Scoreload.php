@@ -1,7 +1,11 @@
 <?php
-define('DOCUMENT_ROOT',dirname(__FILE__));
-include(DOCUMENT_ROOT.'/ConDB.php');
-$Game_ID = $_GET['Game_ID'];
+include 'ConDB.php';
+session_start();
+if (!isset($_SESSION['code']))	{
+	$Game_ID = $_COOKIE['code'];
+} else {
+	$Game_ID = $_SESSION['code'];
+}
 
 $result = $dbC->query("SELECT Score_1, Score_2 FROM games WHERE Game_ID = '$Game_ID'");
 if ($result->num_rows > 0) {

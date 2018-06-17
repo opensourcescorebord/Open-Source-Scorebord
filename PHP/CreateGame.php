@@ -6,15 +6,8 @@ $Team_2 = $_POST['Team_2']; //Set Team 2 name
 $Sport = $_POST['sport']; //Set Sport about to be played
 
 if(isset($Team_1, $Team_2, $Sport)) {
-    ob_start();
-    $files = glob('../images/*');
-// loop through files
-foreach($files as $file){
-if(is_file($file)) {
-  // delete file
-  unlink($file);
-}
-}
+    array_map('unlink', glob('../images/*'));
+
 
     $file = $_FILES['T1L'];
     $fileName = $_FILES['T1L']['name'];
@@ -35,7 +28,7 @@ if(is_file($file)) {
 
       $fileExt2 = explode('.', $fileName);
       $fileActualExt2 = strtolower(end($fileExt));
-
+	if ($fileSize >= 0 And $fileSize2 >= 0){
       $allowed = array('jpg', 'jpeg', 'png');
       if (in_array($fileActualExt, $allowed) And in_array($fileActualExt2, $allowed)){
         if ($fileError === 0 And $fileError2 === 0){
@@ -57,6 +50,10 @@ if(is_file($file)) {
       } else {
         echo "Cant upload files of this type";
       }
+}else {
+array_map('unlink', glob('../images/*'));
+}
+
     // To protect MySQL injection (more detail about MySQL injection)
     $thisTeam_1 = stripslashes($Team_1);
     $thisTeam_2 = stripslashes($Team_2);

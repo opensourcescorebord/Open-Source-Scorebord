@@ -1,7 +1,7 @@
 <?php
 session_start();
-define('DOCUMENT_ROOT',dirname(__FILE__));
-include(DOCUMENT_ROOT.'/ConDB.php'); //Initiate the MySQL connection
+
+include 'ConDB.php'; //Initiate the MySQL connection
 
 if ($_POST['Score'] == '1+')
 {

@@ -10,6 +10,6 @@ header( 'Content-Type: text/html; charset=utf-8' );
 $sql="UPDATE games SET User='0', Timeout='2', Timeout_Time='0', Extended='0', active='0', End_Time=now() WHERE Game_ID = '$_SESSION[code]'";
 if(mysqli_query($dbC, $sql)){
   session_destroy();
-  header("location:../Index.php");
+  header("location:../");
 
 }

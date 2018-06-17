@@ -1,6 +1,11 @@
 <?php
 include '../PHP/ConDB.php';
-$Game_ID = $_COOKIE['code'];
+session_start();
+if (!isset($_SESSION['code']))	{
+	$Game_ID = $_COOKIE['code'];
+} else {
+	$Game_ID = $_SESSION['code'];
+}
 
 
 $result = $dbC->query("SELECT Timeout, Extended_Time, Extended, Score_1, Score_2 FROM games WHERE Game_ID = '$Game_ID'");
