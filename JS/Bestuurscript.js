@@ -89,7 +89,7 @@ var Xtra = 0;
             alert(Add + " Minuten worden aan het eind toegevoegd.");
           })
       //Timeout
-        $( "#Pause" ).on('click', Timeoutbutton;
+        $( "#Pause" ).on('click', Timeoutbutton);
 
         function Timeout_Time(){
                 Timeout = Timeout + 1;
