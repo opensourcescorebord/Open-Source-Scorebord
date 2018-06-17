@@ -46,7 +46,7 @@ if(isset($Team_1, $Team_2, $Sport)) {
 
             move_uploaded_file($fileTmpName2, $fileDestination2);
           }
-          if ($fileSize == 0 && $fileSize2 == 0)
+          if ($fileSize == 0 And $fileSize2 == 0)
           {
             array_map('unlink', glob('../images/*'));
           }

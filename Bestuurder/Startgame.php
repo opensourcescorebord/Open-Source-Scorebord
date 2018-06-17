@@ -52,8 +52,8 @@ $logos = scandir("../images/", 1);
     while ($row = $result->fetch_assoc()) { ?>
       var t1 = "<?php echo $row['Team_1'] ?>";
       var t2 = "<?php echo $row['Team_2'] ?>";
-      document.getElementById("T1").inneHTML = t1;
-      document.getElementById("T2").inneHTML = t2;
+      $("#T1").html(t1);
+      $("#T2").html(t2);
     <?php }?>
   <?php }?>
   }());
