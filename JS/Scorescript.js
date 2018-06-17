@@ -15,6 +15,8 @@ function retrieve_cookie(name) {
   return cookie_value;
 }
 
+
+
 var Add = 0;
 var Ext = 0;
 var periodtime = 45;
@@ -22,51 +24,23 @@ var endtime = 90;
 var TmO = 0;
 var Xtra = 0;
 var distance = 0;
-var Period = 0;
+var Period = 0;    
+var Score_1;
+var Score_2;
+var Timeout = 0;
+var timer = 1;
+var myVar = setInterval(myTimer, 1000);
 
+distance = distance - Xtra;
 
-$.get("../PHP/Timer.php", function(data){
+    $.get("../PHP/Timer.php", function(data){
   console.log(data);
   Xtra = Number(data.gT.Timeout_Time);
   distance = Number(data.gT.cur_time);
   Period = Number(data.gT.Perdiod);
+  $('.T1').text(data.gT.Team_1);
+  $('.T2').text(data.gT.Team_2);
 }, "json");
-
-
-
-    var Timeout = 0;
-    var myVar = setInterval(myTimer, 1000);
-    var timer = 1;
-    distance = distance - Xtra;
-
-    (function Timeout() {
-      $.get("../PHP/getTimeout.php?Game_ID=" + retrieve_cookie('code'), function(result){
-        console.log(result);
-        $(TmO).val(result.Tout);
-        console.log(TmO);
-        if (TmO == 1 && timer == 1) {
-          Timeout = Timeout + 1;
-          clearInterval(myVar);
-          timer = 0;
-        } else if (TmO == 0 && timer == 0) {
-          setInterval(myTimer, 1000);
-          timer = 1;
-          $.post("../PHP/saveTime.php?Time=" + Timeout);
-        } else if (TmO == 2)  {
-          session_destroy();
-          window.location.replace('PIwaitingroom.php');
-
-        }
-
-
-
-      });
-
-      setTimeout(Timeout, 1000);
-    }());
-
-
-
 
     function myTimer() {
       $(".Period").html(Period);
@@ -93,39 +67,22 @@ $.get("../PHP/Timer.php", function(data){
       }
     }
 
-    $.get("../PHP/getTeams.php", function(data){
-      console.log(data);
-      $('.T1').text(data.Team.Team_1);
-      $('.T2').text(data.Team.Team_2);
-
-
-    }, "json");
-
-        var Score_1;
-        var Score_2;
-
         (function getScore() {
-          $.ajax({ type: "POST",
-          url: "../PHP/Scoreload.php?Game_ID=" + retrieve_cookie('code'),
-          dataType: "json",
-          success : function(data)
+          $.get( "../PHP/Scoreload.php", function(data)
           {
             $('.S1').text(data.Sc.Score_1);
             $('.S2').text(data.Sc.Score_2);
             Add = (parseInt(data.Sc.Extended_Time));
             Ext = (parseInt(data.Sc.Extended));
             TmO =(parseInt(data.Sc.Timeout));
-
             if (Ext == 1 && endtime == 90) {
               endtime = endtime + Add;
               timeOut();
               function timeOut() {
                   var t = setTimeout( showPopup(), 3000);
                 }
-
                 function showPopup() {
                   $.toast.danger("+" + Add + "Min.");
-
                 }
             }
             if (TmO == 1 && timer == 1) {
@@ -138,23 +95,10 @@ $.get("../PHP/Timer.php", function(data){
               $.post("../PHP/saveTime.php?Time=" + Timeout);
             } else if (TmO == 2)  {
               window.location.replace('PIwaitingroom.php');
-
             }
+          }, "json")
+	setTimeout(getScore, 1000);
+        }());
 
-
-
-          }
-        });
-
-        $.ajax({ type: "POST",
-        url: "../PHP/getTimeout.php?Game_ID=" + retrieve_cookie('code'),
-        dataType: "json",
-        succes : function(data)
-        {
-          $(Timeout).text(data.To.Timeout);
-        }
-
-
-      });
-      setTimeout(getScore, 1000);
-    }());
+      
+    

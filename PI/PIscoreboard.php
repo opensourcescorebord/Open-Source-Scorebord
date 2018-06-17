@@ -1,13 +1,9 @@
 <?php
-session_start();
-include '../PHP/conDB.php';
+include '../PHP/ConDB.php';
 $logos = scandir("../images/", 1);
 
 if(!isset($_COOKIE['code'])){
-  if(!isset($_GET['Game_ID'])){
-    header("location:/PI/PIwaitingroom.php");
-  }
-  setcookie('code',  $_GET['Game_ID'], time() + (86400 * 30), '/');
+  setcookie('code',  $_GET['Game_ID'], time() + 7200, '/PHP');
 }
 ?>
 
@@ -56,7 +52,7 @@ h3 {
 
   <div class="container m-1 w-100 h-100 mw-100">
 <div class="row align-items-center mw-75 h-75">
-  <div class="col-12 align-self-center mw-100 shadow-lg">
+  <div class="col-12 align-self-center mw-100">
     <div id="advert" class="mb-5 w-100 py-3">
 
       <?php
@@ -77,7 +73,7 @@ h3 {
         <div class="col-2">
 
           <div class="shadow-lg card">
-            <img class="card-img-top" src="../images/<?php echo $logos[1]?>" alt="../images/stock.jpg">
+            <img class="card-img-top" src="../images/<?php echo $logos[1]?>" alt="../Stock/Thuis.png">
             <div class="card-body">
               <h3 class="text-center T1">---</h3>
             </div>
@@ -112,7 +108,7 @@ h3 {
           <div class="col-2">
             <div class="shadow-lg card">
 
-              <img class="card-img-top" src="../images/<?php echo $logos[0] ?>" alt="stock.jpg">
+              <img class="card-img-top" src="../images/<?php echo $logos[0] ?>" alt="../Stock/Uit.png">
               <div class="card-body">
                 <h3 class="text-center T2">--- </h3>
               </div>
