@@ -89,32 +89,33 @@ var Xtra = 0;
             alert(Add + " Minuten worden aan het eind toegevoegd.");
           })
       //Timeout
-        $( "#Pause" ).on('click', function() {
-                setInterval(Timeout_Time, 1000);
-                $.post("../PHP/setTimeout.php", function(data) {
-      clearInterval(myVar);
-              $("#Pause").unbind("click");
-              $( ".o" ).html("<button id='unPause' class='shadow btn btn-danger btn-lg w-100'> Hervatten </button>" );
-              $("#unPause").click( function() {
-                clearInterval(Timeout_Time());
-                $.post("../PHP/saveTime.php?Time=" + Timeout);
-                Timeout = 0;
-                $.ajax({ type: "POST",
-                url: "../PHP/unsetTimeout.php",
-                success : function(data)
-                {
-                  $("#unPause").unbind("click");
-                  $( ".o" ).html("<button id='Pause' class='shadow btn btn-danger btn-lg w-100'> Pauzeren </button>" );
-                  $("#Pause").click(Timeoutbutton);
-                  myVar = setInterval(myTimer, 1000);
-
-                }
-              });
-            });
-
-                });
-              })
+        $( "#Pause" ).on('click', function Timeoutbutton());
 
         function Timeout_Time(){
                 Timeout = Timeout + 1;
             }
+            function Timeoutbutton() {
+                    setInterval(Timeout_Time, 1000);
+                    $.post("../PHP/setTimeout.php", function(data) {
+            clearInterval(myVar);
+                  $("#Pause").unbind("click");
+                  $( ".o" ).html("<button id='unPause' class='shadow btn btn-danger btn-lg w-100'> Hervatten </button>" );
+                  $("#unPause").click( function() {
+                    clearInterval(Timeout_Time());
+                    $.post("../PHP/saveTime.php?Time=" + Timeout);
+                    Timeout = 0;
+                    $.ajax({ type: "POST",
+                    url: "../PHP/unsetTimeout.php",
+                    success : function(data)
+                    {
+                      $("#unPause").unbind("click");
+                      $( ".o" ).html("<button id='Pause' class='shadow btn btn-danger btn-lg w-100'> Pauzeren </button>" );
+                      $("#Pause").click(Timeoutbutton);
+                      myVar = setInterval(myTimer, 1000);
+
+                    }
+                  });
+                });
+
+                    });
+                  }
