@@ -31,7 +31,7 @@
   <div>
     <br>
     <br>
-    <div class="row justify-content-center">
+    <div class="row h-100 justify-content-center">
       <div class="col-8 w-50 py-5 card shadow-lg">
         <h1 class="text-center">Welkom!</h1>
         <h2 class="text-center">Een wedstrijd zal binnenkort beginnen.</h2>
