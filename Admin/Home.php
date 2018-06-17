@@ -33,7 +33,7 @@ background: #BABABA;
 </head>
 <body class="bg-light">
 
-     <div class="shadow-lg jumbotron" style="background-image: url(http://i218.photobucket.com/albums/cc233/shoopuff1/Opensource%20Scorebord/cvl%201%20gradient.png); background-size: 100%;">
+     <div class="shadow-lg jumbotron" style="background-image: url('../Stock/BG.jpeg'); background-size: 100%;">
 
      <div class="container" >
       <h2 class="shadow-lg bg-white text-dark font-weight-bold text-center" style="opacity: 0.75"> Admin Home Screen </h2>

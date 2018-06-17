@@ -31,7 +31,7 @@ if(!isset($_COOKIE['code'])){
   <style>
   body,html {
     height: 100%;
-    background-image: url("http://i218.photobucket.com/albums/cc233/shoopuff1/Opensource%20Scorebord/CvL%20double%20Logo%2045%20degrees%20xsm.png");
+    background-image: url("../Stock/BG.jpeg");
     overflow:hidden;
   }
 
