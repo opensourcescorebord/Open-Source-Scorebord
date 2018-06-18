@@ -2,7 +2,7 @@
 include '../PHP/ConDB.php';
 session_start();
 if(!isset($_SESSION['code'])) {//If session not registere
-header("location:../Index.php"); // Redirect to login.php page
+header("location:../"); // Redirect to login.php page
 }
 else //Continue to current page
 header( 'Content-Type: text/html; charset=utf-8' );

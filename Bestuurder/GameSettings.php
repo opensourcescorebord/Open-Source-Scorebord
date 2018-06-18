@@ -58,7 +58,7 @@ else //Continue to current page
                 <button class="btn btn-lg btn-info "type="submit" name="button"> Create </button>
                   <br>
                   <br>
-                <a class="btn btn-lg btn-info" href="/PHP/logout.php">LOGOUT</a>
+                <a class="btn btn-lg btn-info" href="/PHP/midgameLeave.php">LOGOUT</a>
               </div>
             </div>
           </Form>
