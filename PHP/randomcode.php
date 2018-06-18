@@ -7,13 +7,13 @@
 
     $randomPassword = createRandomPassword();
 
-		$result = $dbC->query("SELECT * FROM games WHERE User = '0' AND End_Time IS NULL;");
+		$result = $dbC->query("SELECT * FROM games WHERE End_Time IS NULL;");
 	          if ($result->num_rows > 0) {
-              $request = $dbC->query("SELECT * FROM games WHERE End_Time IS NULL;");
+              $request = $dbC->query("SELECT * FROM games WHERE User = '0' AND End_Time IS NULL;");
               if ($request->num_rows > 0){
                 $sql="UPDATE games SET Game_ID = '$randomPassword'";
               } else {
-                header("location:../Index.php");
+                header("location:../");
               }
 
 						}  else {
