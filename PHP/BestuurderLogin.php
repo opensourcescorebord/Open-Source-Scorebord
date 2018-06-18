@@ -14,7 +14,7 @@ if(isset($_POST['code'])){
 
 
 
-    $sql="select * from games where Game_ID='".$code."'";
+    $sql="select * from games where Game_ID='".$code."' AND User='0'";
 
     $result=mysqli_query($dbC, $sql);
 
@@ -31,7 +31,7 @@ if(isset($_POST['code'])){
        exit();
     }
     else{
-        echo " You Have Entered Incorrect Password";
+        echo "Verkeerde wachtwoord of spel is al bezig";
       exit();
     }
 }
