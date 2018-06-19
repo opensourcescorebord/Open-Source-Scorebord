@@ -51,31 +51,31 @@ eerst zal de procedure beschreven worden, vervolgens zal er beschreven hoe we di
 
     Na het testen op 5 apparaten tegelijk is gebleken dat de score update binnen 1 seconde op alle devices.
 
-* 2. De software moet geheel open-source zijn.
+* 2. De software moet geheel open-source zijn:
     Dit wordt getest door een persoon van buiten af. Deze persoon gaat kijken of hij makkelijk een weg kan banen door de code van het Open Source Scorebord.
 
 
-* 3. De code zal toegankelijk zijn via GitHub.
+* 3. De code zal toegankelijk zijn via GitHub:
     Dit word getest door op GitHup te zoeken naar “Open Source Scorebord”.
 
     Zoeken naar ‘Open Source Scorebord’ levert het gewenste resultaat, namelijk ons project, bovenaan. Zoeken naar ‘Scorebord’ geeft ons project als 8ste weer.
 
-* 4. De score moet gebruiksvriendelijk aan te passen zijn.
+* 4. De score moet gebruiksvriendelijk aan te passen zijn:
     Dit gaan we testen door de webapp te openen en een game te starten en vervolgens de score aan te passen.
 
     Als je een game start verschijnen er 4 knoppen waarmee de score aangepast kan worden. Dit werkt allemaal intuïtief en naar behoren.
 
-* 5. De score moet zichtbaar zijn voor alle toeschouwers.
+* 5. De score moet zichtbaar zijn voor alle toeschouwers:
     Dit gaan we testen door de Open Source Scorebord op een tv aan te sluiten en steeds verder naar achter te lopen totdat het oncomfortabel is om ernaar te kijken.
 
     Vanaf 30 meter was de score nog duidelijk zichtbaar. Maar dit is ook sterk afhankelijk van wat voor TV de sporthal aanschaft. Wij hebben hiervoor een TV met diameter 1 meter 60 gebruikt.
 
-* 6. Er mag één gebruiker tegelijk controle de hebben over de bediening.
+* 6. Er mag één gebruiker tegelijk controle de hebben over de bediening:
     Dit gaan we testen door met een ander apparaat proberen een game te starten, terwijl er al een game aan de gang is.
 
     Wanneer iemand actief de game aan het besturen is zal ieder persoon die ook probeert in te loggen direct geredirect worden.
 
-* 7. De software wordt gefaciliteerd op een betaalbare en bruikbare processor.
+* 7. De software wordt gefaciliteerd op een betaalbare en bruikbare processor:
     Dit gaan we testen door de Raspberry Pi aan te doen.
 
     We gebruiken een raspberry pi om de server te hosten en dit werkt allemaal naar behoren.
