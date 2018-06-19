@@ -2,16 +2,23 @@
 Een moderne variant op een oud idee.
 
 
-## Getting Started
+## Ermee aan het werk
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Deze instructies zullen je begeleiden door het installatie process.
+Mogelijke problemen kunnen aangegeven worden door een mail te sturen naar:
 
-### Prerequisites
+### Benodigdheden
 
-What things you need to install the software and how to install them
+Hieronder staan de dingen die je nodig hebt om dit systeem aan het werk te krijgen binnen U sporthal.
 
 ```
-Give examples
+* Tv scherm, 1920 x 1080, 170cm+ aangeraden
+* Raspberry Pi 3+
+* Lokaal netwerk binnen de sporthal
+* HDMI
+* Muis & Toetsenbord
+* Ethernet kabel of WiFi
+
 ```
 
 ### Installing
