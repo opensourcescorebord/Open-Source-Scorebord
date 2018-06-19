@@ -82,7 +82,7 @@ sudo apt install mysql-server php-mysql
 Om vervolgens te testen of MYSQL werkt zullen we de volgende commands in de terminal intypen.  
 Vervang 'password' met het gewenste password voor uw database
 ```
-sudo mysql --user=root
+sudo mysql -u root
 
 DROP USER 'root'@'localhost';
 CREATE USER 'root'@'localhost' IDENTIFIED BY 'password';
@@ -91,8 +91,29 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'
 ```
 
 Om de bestanden voor OSS op je computer te krijgen zul je deze moeten downloaden vanaf deze github pagina.  
-Navigeer op de raspberry pi naar onze github pagina en download alles als een zip bestand.
-Pak alles uit in het mapje '/var/html/www/'
+Navigeer op de raspberry pi naar onze github pagina en download alles als een zip bestand.  
+Verwijder eerst alle data uit het mapje '/var/html/www/'
+Pak alles uit in het mapje '/var/html/www/'  
+
+Open de terminal nogmaals en creeer een database genaamd 'Scorebord':
+```
+cd /var/www/html
+
+sudo mysql -u root -p [uw gekozen wachtwoord]
+
+CREATE DATABASE scorebord;
+
+CREATE USER 'ScorePi'@'localhost' IDENTIFIED BY 'SDI';
+
+GRANT ALL PRIVILEGES ON * scorebord * TO 'ScorePi'@'SDI';
+
+FLUSH PRIVILEGES;
+
+mysql -u root -p [Door u gekozen wachtwoord] localhost scorebord < scorebordsql.sql
+
+```
+
+
 
 
 
