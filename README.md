@@ -1,7 +1,7 @@
 # Open-Source Scorebord
-Een moderne variant op een oud idee.
+Een moderne variant op een oud idee.  
 
-(We raden nog niet aan dit te gebruiken in een actieve sporthal voor andere redenen dan testen. Wij zijn 5 elektrotechniek studenten zonder formele opleiding in web development, er zullen zeker bugs zijn en veiligheids problemen. We moedigen je aan naar de code te kijken en deze dingen te verbeteren.)  
+(We raden het gebruik van OSS af in een actieve sporthal voor andere doeleinden dan testen. Wij zijn 5 elektrotechniek studenten zonder formele opleiding in web development, er zullen zeker bugs zijn en veiligheids problemen. We moedigen je aan naar de code te kijken en deze dingen te verbeteren.)  
 
 
 
