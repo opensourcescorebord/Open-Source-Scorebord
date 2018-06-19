@@ -18,26 +18,89 @@ Hieronder staan de dingen die je nodig hebt om dit systeem aan het werk te krijg
 * HDMI
 * Muis & Toetsenbord
 * Ethernet kabel of WiFi
+* SD/Micro SD, minstens 8GB
 
 ```
 
-### Installing
+### Installeren
 
-A step by step series of examples that tell you how to get a development env running
+Een stappen gids voor het installeren van het OSS project  
 
-Say what the step will be
+Navigeer naar de links hieronder en download de nieuwste versies:
+```
+https://downloads.raspberrypi.org/raspbian_latest
+https://github.com/resin-io/etcher/releases/download/v1.4.4/Etcher-Setup-1.4.4-x64.exe
+```
+Gebriuk Etcher om raspbian op de SD kaart te zetten.  
+
+Stop de SD kaart in de PI.  
+Start de Pi op.  
+Stel je Wifi in of sluit je Ethernet kabel aan.  
+
+Start de terminal op en installeer apache2, PHP, Mysql en PhpMyAdmin.  
+Check eerst of je PI up-to-date is
 
 ```
-Give the example
+sudo apt update
+sudo apt upgrade
+sudo apt update
+
+```
+  Vervolgens installeren we eerst apache
+```
+sudo apt install apache2
+
+```
+vervolgens moeten we een paar rechten verlenen aan het mapje waar apache zijn bestanden vandaan zal halen
+```
+sudo chown -R pi:www-data /var/www/html/
+sudo chmod -R 770 /var/www/html/
+
+```
+Om te testen of je installatie is geslaagd kun je Chromium opstarten en 'localhost' in de adresbalk intypen.  
+
+
+Nu gaan we PHP installeren, Hiervoor moet je het volgende in de Terminal invoeren
+```
+sudo apt install php php-mbstring
+
+```
+Om vervolgens te testen of PHP werkt zullen we de volgende commands in de terminal intypen
+```
+sudo rm /var/www/html/index.html
+
+echo "<?php phpinfo ();?>" > /var/www/html/index.php
+
+```
+Navigeer nu weer naar 'localhost' in Chromium
+
+Nu gaan we MYSqL installeren, Hiervoor moet je het volgende in de Terminal invoeren
+```
+sudo apt install mysql-server php-mysql
+
+```
+Om vervolgens te testen of MYSQL werkt zullen we de volgende commands in de terminal intypen.  
+Vervang 'password' met het gewenste password voor uw database
+```
+sudo mysql --user=root
+
+DROP USER 'root'@'localhost';
+CREATE USER 'root'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'
+
 ```
 
-And repeat
+Om de bestanden voor OSS op je computer te krijgen zul je deze moeten downloaden vanaf deze github pagina.  
+Navigeer op de raspberry pi naar onze github pagina en download alles als een zip bestand.
+Pak alles uit in het mapje '/var/html/www/'
 
-```
-until finished
-```
+
 
 End with an example of getting some data out of the system or using it for a little demo
+
+
+### Gebruik
+
 
 ## Test procedure
 
