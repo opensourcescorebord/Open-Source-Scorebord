@@ -1,6 +1,9 @@
 # Open-Source Scorebord
 Een moderne variant op een oud idee.
 
+(We raden nog niet aan dit te gebruiken in een actieve sporthal voor andere redenen dan testen. Wij zijn 5 elektrotechniek studenten zonder formele opleiding in web development, er zullen zeker bugs zijn en veiligheids problemen. We moedigen je aan naar de code te kijken en deze dingen te verbeteren.)  
+
+
 
 ## Ermee aan het werk
 
@@ -112,12 +115,14 @@ FLUSH PRIVILEGES;
 mysql -u root -p [Door u gekozen wachtwoord] localhost scorebord < scorebordsql.sql
 
 ```
+Zoek het IP adress van de PI op door de volgende command uit te voeren:
+```
+ifconfig
 
+```
 
-
-
-
-End with an example of getting some data out of the system or using it for a little demo
+Als u nu navigeert naar 'localhost/PI/PIwaitinroom.php' op de PI zal de PI klaar zijn voor een test.  
+Navigeer op uw telefoon, die ook verbonden moet zijn met hetzelfde netwerk, naar het IP adress van de PI
 
 
 ### Gebruik
