@@ -36,7 +36,7 @@
         <h1 class="text-center">Welkom!</h1>
         <h2 class="text-center">Een wedstrijd zal binnenkort beginnen.</h2>
          <h3 class="text-center"><span id="T1">-</span><span> vs </span><span id="T2">-</span></h3>
-         <h1 id="Code" class="display-3 text-center">---</h1>
+         <h1 id="Code" class="display-3 text-center">----</h1>
       </div>
     </div>
            <script type="text/javascript">

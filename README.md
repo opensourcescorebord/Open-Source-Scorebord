@@ -124,6 +124,38 @@ ifconfig
 Als u nu navigeert naar 'localhost/PI/PIwaitinroom.php' op de PI zal de PI klaar zijn voor een test.  
 Navigeer op uw telefoon, die ook verbonden moet zijn met hetzelfde netwerk, naar het IP adress van de PI
 
+Na het opstarten en testen van het systeem raden wij aan om de PI in kiosk modus te zetten. Dit houdt in dat hij altijd op zal starten in PI fullscreen zonder muis en zonder all grafische dingen. Het is mogelijk om hieruit te komen en dat zal hieronder beschreven worden.  
+
+
+Om die PI in fullscreen te forceren, Ga naar:
+```
+cd boot/
+
+sudo leafpad config.txt
+```
+Zoek hierin naar de line disable_overscan en haal de # hiervoor weg.
+Zet HDMI-group = 1
+Zet HDMI-mode = 16
+
+In Kiosk modus gaan: (Voor sommige PIs is LXDE-pi gewoon LXDE)
+```
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+```
+Hier staan alle processen die direct na startup gedaan moeten worden.  
+Verwijder de volgende line:
+```
+@xscreensaver -no-splash
+```
+En voeg deze toe:
+```
+@xset s off
+@xset -dpms
+@xset s noblank
+
+@sed -i 's/"exited_cleanly": false/"exited_cleanly": true/' ~/.config/chromium/Default/Preferences
+
+@chromium --noerrdialogs --kiosk http://localhost/PI/PIwaitingroom.php --incognito
+```
 
 ### Gebruik
 
