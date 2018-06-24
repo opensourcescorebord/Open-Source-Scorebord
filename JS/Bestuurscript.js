@@ -47,10 +47,10 @@ var Xtra = 0;
               $(".time").text("");
 
             }
-            $( "#Interactief" ).html('<div class="col"><div class="shadow-lg card p-3 mb-1"><div class="row justify-content-center"><div class="col-12 "><a href="../PHP/newGame.php" class="btn btn-danger btn-lg col-centered w-100" role="button">Start een nieuwe game</a></div><div class="col-12 "><a href="../PHP/Leave.php" class="btn btn-danger btn-lg col-centered w-100 mt-3" role="button">Stop met besturen</a></div></div></div></div>');
+
 
           });
-
+$( "#Interactief" ).html('<div class="col"><div class="shadow-lg card p-3 mb-1"><div class="row justify-content-center"><div class="col-12 "><a href="../PHP/newGame.php" class="btn btn-danger btn-lg col-centered w-100" role="button">Start een nieuwe game</a></div><div class="col-12 "><a href="../PHP/Leave.php" class="btn btn-danger btn-lg col-centered w-100 mt-3" role="button">Stop met besturen</a></div></div></div></div>');
 
         }}
 
