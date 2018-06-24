@@ -36,7 +36,7 @@ var Xtra = 0;
 
           //If the count down is over, write some text
           if (minutes >= 45 && Period == 1) {
-            clearInterval(myVar);
+            clearInterval(myTimer);
             $(".time").text("Rust");
             $( "#Interactief" ).html('<div class="col"><div class="shadow-lg card p-3 mb-1"><div class="row justify-content-center"><div class="col-12 "><a href="../PHP/Endpause.php" class="btn btn-danger btn-lg col-centered w-100" role="button">Start Game!</a></div></div></div></div>' );
           }
@@ -47,7 +47,7 @@ var Xtra = 0;
             dataType: "json",
             success : function(data)
             {
-              clearInterval(myVar);
+              clearInterval(myTimer);
               $(".time").text("");
             }
           });
