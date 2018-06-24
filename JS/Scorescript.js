@@ -24,7 +24,7 @@ var endtime = 90;
 var TmO = 0;
 var Xtra = 0;
 var distance = 0;
-var Period = 0;    
+var Period = 0;
 var Score_1;
 var Score_2;
 var Timeout = 0;
@@ -50,8 +50,6 @@ distance = distance - Xtra;
       distance = distance + 1;
       // Output the result in an element with id="demo"
       $(".time").text(minutes + "m " + seconds + "s ");
-
-      //  document.getElementById("demo").innerHTML = minutes;
 
       //If the count down is over, write some text
       if (minutes >= 45 && Period == 1) {
@@ -99,6 +97,3 @@ distance = distance - Xtra;
           }, "json")
 	setTimeout(getScore, 1000);
         }());
-
-      
-    

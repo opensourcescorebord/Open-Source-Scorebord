@@ -46,7 +46,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
 </head>
 
 <body class="bg-light">
-  <div class="shadow-lg jumbotron mb-3" style="background-image: url('../Stock/BG.jpeg');" background-size: 100%;">
+  <div class="shadow-lg jumbotron mb-3" style="background-image: url('../Stock/BG.jpeg');" background-size: 100%;>
 
     <div class="container" >
       <h2 class="shadow-lg bg-white text-dark font-weight-bold text-center" style="opacity: 0.75"> OPEN-SOURCE SCOREBORD </h2>

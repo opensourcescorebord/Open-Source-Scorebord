@@ -35,7 +35,7 @@ var Xtra = 0;
           $(".time").text(minutes + "m " + seconds + "s ");
 
           //If the count down is over, write some text
-          if (minutes >= (45) && Period == 1) {
+          if (minutes >= 45 && Period == 1) {
             clearInterval(myVar);
             $(".time").text("Rust");
             $( "#Interactief" ).html('<div class="col"><div class="shadow-lg card p-3 mb-1"><div class="row justify-content-center"><div class="col-12 "><a href="../PHP/Endpause.php" class="btn btn-danger btn-lg col-centered w-100" role="button">Start Game!</a></div></div></div></div>' );

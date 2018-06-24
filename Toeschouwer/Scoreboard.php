@@ -22,9 +22,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-	<style>
-body{
-
+  <style>
+  h1{
+font-size: 1750% !important;
+}
+h2 {
+  font-size: 400%;
+}
+h3 {
+  font-size: 250%;
 }
 
 
@@ -46,109 +52,43 @@ body{
 
 <div class="shadow-lg jumbotron 	background-color:#000000">
 
-<!-- Kaarten voor grote schermen-->
-<div class="d-none d-lg-block">
-	<div class="row">
+<div class="row">
+  <div class="col-12 shadow-lg card">
+    <div class="row">
+      <div class="col-5">
+        <img class="card-img-top" src="../images/<?php echo $logos[1]?>" onError="this.onerror=null;this.src='/Stock/Thuis.png'" >
+        <div class="">
+          <h3 class="text-center T1">---</h3>
+        </div>
+      </div>
+      <div class="col-2">
+                      <h3 class="text-center font-weight-bold text-black-50" > TIME</h3>
 
-<!-- Eerste kaart -->
-		<div class="col-3">
+                      <h3 class="text-center"> <p><span class="time"></span></p>
+                      </h3>
 
-		<div class="shadow-lg card p-3 mb-5">
-			<img class="card-img-top" src="../images/<?php echo $logos[1]?>" alt="Card image cap">
-			<div class="card-body">
-				<h2 class="text-center T1">---</h2>
-			</div>
-		</div>
-
-		</div>
-<!-- Tweede kaart -->
-<div class="col">
-
-		<div class="shadow-lg card p-3 mb-5">
-			<div class="card-body" >
-
-							<h6 class="text-center font-weight-bold text-black-50" > TIME</h6>
-
-							<h2 class="text-center"> <p><span class="time"></span></p>
-							</h2>
-
-							<h2 class="display-3 text-center font-weight-bold text-black-50"> SCORE</h2>
-              <h2 class="display-1 text-center font-weight-bold">
-                  <span class=" S1">0</span>
-                  <span class="">:	</span>
-                  <span class="S2">0</span>
-                </h2>
-
-              <p class="text-center font-weight-bold text-dark p-0 m-0"> Period </p>
-    					<p class= "text-center font-weight-bold text-dark period"> - </p>
-
-				<h1 class="card-text"></h1>
-			</div>
-		</div>
+                      <h3 class="text-center font-weight-bold text-dark p-0 m-0"> Period </h3>
+                      <h3 class= "text-center font-weight-bold text-dark Period"> - </h3>
+      </div>
+      <div class="col-5">
+        <img class="card-img-top" src="../images/<?php echo $logos[1]?>" onError="this.onerror=null;this.src='/Stock/Uit.png'" >
+        <div class="">
+          <h3 class="text-center T2">---</h3>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
+<div class="row">
+  <div class="col-6">
+    <div class="shadow-lg card"><h1 class="display-1 text-center font-weight-bold"><span class=" S1">-	</span></h1></div>
+  </div>
+  <div class="col-6">
+    <div class="shadow-lg card"><h1 class="display-1 text-center font-weight-bold"><span class=" S2">-	</span></h1></div>
+  </div>
 
-<!-- Derde kaart -->
-
-<div class="col-3">
-		<div class="shadow-lg card p-3 mb-5">
-
-			<img class="card-img-top" src="../images/<?php echo $logos[0]?>"  alt="Card image cap">
-			<div class="card-body">
-				<h2 class="text-center T2">--- </h2>
-			</div>
-		</div>
-
-	</div>
-
-	</div>
-	</div>
-
-
-<!-- Kaarten voor kleine schermen -->
-	<div class="shadow-lg card d-block d-lg-none	p-3 mb-5">
-
-			<div class="row">
-
-			<!-- Logo Team 1 -->
-				<div class="col-4">
-					<img class="card-img-top" src="../images/<?php echo $logos[1]?>"  alt="Card image cap">
-					<p class="T1"> --- </p>
-				</div>
-
-			<!-- Score & tijd -->
-				<div class="col-4">
-					<p class="text-center font-weight-bold text-dark p-0 m-0"> SCORE </p>
-          <h2 class="text-center font-weight-bold">
-              <span class=" S1">0</span>
-              <span class="">:	</span>
-              <span class="S2">0</span>
-            </h2>
-					<p class="text-center font-weight-bold text-dark p-0 m-0"> TIME </p>
-					<p class="time" class= "text-center font-weight-bold text-dark"> 13:32 </p>
-
-				</div>
-
-			<!-- Logo Team 2 -->
-				<div class="col-4">
-					<img class="card-img-top" src="../images/<?php echo $logos[0]?>"  alt="Card image cap">
-					<p class="T2"> --- </p>
-				</div>
-
-			</div>
-		</div>
-
-
-	</div>
-
-
-
-
-
-
-
-
-
+</div>
 
 
   <!-- Reclame Banner Footer-->
@@ -176,7 +116,7 @@ body{
          var distance = <?php echo $row['cur_time'] ?>;
          var period = <?php echo $row['Perdiod'] ?>;
        <?php }}?>
-       $(".period").text(period);
+       $(".Period").text(period);
        var myVar = setInterval(myTimer, 1000);
        function myTimer() {
          // Time calculations for days, hours, minutes and seconds

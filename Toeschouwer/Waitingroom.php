@@ -47,10 +47,13 @@
                          success : function(data)
                          {
                            var act = parseInt(data.AcG.Active);
+                           var GameID = JSON.stringify(data.AcG.Game_ID);
+                           GameID = GameID.replace('"', '');
+                           GameID = GameID.replace('"', '');
 			                     $('#T1').text(data.AcG.Team_1);
 			                     $('#T2').text(data.AcG.Team_2);
                            if(act == '1'){
-                            window.location.replace("../Toeschouwer/Scoreboard.php?Game_ID=" + getCookie("Game_ID"));
+                            window.location.replace("../Toeschouwer/Scoreboard.php?Game_ID=" + GameID);
                            }
                          }
                 });
