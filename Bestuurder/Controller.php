@@ -81,7 +81,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
                 <p class= "text-center font-weight-bold text-dark time"> --:-- </p>
 
                 <p class="text-center font-weight-bold text-dark p-0 m-0"> Period </p>
-                <p id="P"class= "text-center font-weight-bold text-dark"> - </p>
+                <p class= "text-center font-weight-bold text-dark Period"> - </p>
               </div>
 
               <!-- Logo Team 2 -->
