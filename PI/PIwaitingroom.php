@@ -53,8 +53,8 @@
                            GameID = GameID.replace('"', '');
                            console.log(GameID);
                            $('#Code').text(data.AcG.Game_ID);
-			   $('#T1').text(data.AcG.Team_1);
-			   $('#T2').text(data.AcG.Team_2);
+			                     $('#T1').text(data.AcG.Team_1);
+			                     $('#T2').text(data.AcG.Team_2);
 
 
                            if(act == '1'){
