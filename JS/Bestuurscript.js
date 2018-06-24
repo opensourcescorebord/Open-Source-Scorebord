@@ -7,34 +7,30 @@ var Xtra = 0;
     var endtime = 90;
     var Score_1;
     var Score_2;
-
-
-
-
-    $.get("../PHP/Timer.php", function(data){
-
-      Xtra = Number(data.gT.Timeout_Time);
-      distance = Number(data.gT.cur_time);
-      $("#P").text(data.gT.Perdiod);
-      $(".T1").text(data.gT.Team_1);
-      $(".T2").text(data.gT.Team_2);
-
-    }, "json");
-
-    $("#P").html(Period);
-    distance = distance - Xtra;
     var myVar = setInterval(myTimer, 1000);
 
+
+
+        $.get("../PHP/Timer.php", function(data){
+      console.log(data);
+      Xtra = Number(data.gT.Timeout_Time);
+      distance = Number(data.gT.cur_time);
+      Period = Number(data.gT.Perdiod);
+      $('.T1').text(data.gT.Team_1);
+      $('.T2').text(data.gT.Team_2);
+    }, "json");
+      distance = distance - Xtra;
         function myTimer() {
+          $(".Period").html(Period);
           // Time calculations for days, hours, minutes and seconds
           var minutes = Math.floor(distance / 60);
           var seconds = distance - minutes * 60;
           distance = distance + 1;
-
           // Output the result in an element with id="demo"
           $(".time").text(minutes + "m " + seconds + "s ");
 
           //If the count down is over, write some text
+
           if (minutes >= 45 && Period == 1) {
             clearInterval(myTimer);
             $(".time").text("Rust");

@@ -31,26 +31,23 @@ var Timeout = 0;
 var timer = 1;
 var myVar = setInterval(myTimer, 1000);
 
-$.get("../PHP/Timer.php", function(data){
 
+
+    $.get("../PHP/Timer.php", function(data){
+  console.log(data);
   Xtra = Number(data.gT.Timeout_Time);
   distance = Number(data.gT.cur_time);
-  $("#P").text(data.gT.Perdiod);
-  $(".T1").text(data.gT.Team_1);
-  $(".T2").text(data.gT.Team_2);
-
+  Period = Number(data.gT.Perdiod);
+  $('.T1').text(data.gT.Team_1);
+  $('.T2').text(data.gT.Team_2);
 }, "json");
-
-$("#P").html(Period);
 distance = distance - Xtra;
-var myVar = setInterval(myTimer, 1000);
-
     function myTimer() {
+      $(".Period").html(Period);
       // Time calculations for days, hours, minutes and seconds
       var minutes = Math.floor(distance / 60);
       var seconds = distance - minutes * 60;
       distance = distance + 1;
-
       // Output the result in an element with id="demo"
       $(".time").text(minutes + "m " + seconds + "s ");
 
@@ -58,7 +55,7 @@ var myVar = setInterval(myTimer, 1000);
       if (minutes >= 45 && Period == 1) {
 
         clearInterval(myTimer);
-        $(".time").text("Rust!");
+        $(".time").text("Rust");
         window.location.replace('PiAdverts.php');
       }
       if (minutes >= endtime && Period == 2){
