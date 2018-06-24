@@ -61,10 +61,15 @@ foreach($files as $file) {
                 dataType: "json",
                 success : function(data)
                 {
-                  var id = parseInt(data);
+                  var id = parseInt(data.AcG.Perdiod);
+                  var GameID = JSON.stringify(data.AcG.Game_ID);
+                  GameID = GameID.replace('"', '');
+                  GameID = GameID.replace('"', '');
+
+
                   console.log(id);
                   if(id == '2'){
-                    window.location.replace("PIscoreboard.php")
+                    window.location.replace("PIscoreboard.php?Game_ID=" + GameID);
                   }
                 }
        });
