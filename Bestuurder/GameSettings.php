@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['code'])) {
-  header("location:/PHP/Login.php");
+  header("location:/Bestuurder/Login.php");
 }
 else //Continue to current page
 ?>
