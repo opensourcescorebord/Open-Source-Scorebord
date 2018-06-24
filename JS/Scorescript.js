@@ -59,9 +59,13 @@ distance = distance - Xtra;
         window.location.replace('PiAdverts.php');
       }
       if (minutes >= endtime && Period == 2){
-        clearInterval(myTimer);
-        $(".time").text("Game Over!");
-        window.location.replace('PIwaitingroom.php');
+        endtime = endtime + Add;
+        if (minutes >= endtime){
+          clearInterval(myTimer);
+          $(".time").text("Game Over!");
+          window.location.replace('PIwaitingroom.php');
+        }
+
       }
     }
 
@@ -73,8 +77,10 @@ distance = distance - Xtra;
             Add = (parseInt(data.Sc.Extended_Time));
             Ext = (parseInt(data.Sc.Extended));
             TmO =(parseInt(data.Sc.Timeout));
+
+
             if (Ext == 1 && endtime == 90) {
-              endtime = endtime + Add;
+            //  endtime = endtime + Add;
               timeOut();
               function timeOut() {
                   var t = setTimeout( showPopup(), 3000);
